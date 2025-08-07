@@ -7,3 +7,5 @@
 output "ec2_instance_info" {
     value  = aws_instance.roboshop
 }
+
+# output blockage is used to print the output of resource in the terminal
