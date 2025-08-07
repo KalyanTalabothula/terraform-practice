@@ -57,12 +57,7 @@ variable "environment" {
 
 variable "instances" {
   type = list(string)
-  default = {
-    mongodb = "t3.micro"  # each keyword is assigned for every iteration. you will get each.key and each.value
-    redis = "t3.micro"
-    mysql = "t3.micro"
-    rabbitmq = "t3.micro"
-  }
+  default = [  "mongodb", "redis", "mysql", "rabbitmq"  ]
 }
 
 
@@ -75,4 +70,17 @@ variable "zone_id" {
 
 variable "domain_name" {
   default = "kalyanu.xyz"
+}
+
+
+# for-loop
+
+variable "instances" {
+  type = list(string)
+  default = {
+    mongodb = "t3.micro"  # each keyword is assigned for every iteration. you will get each.key and each.value
+    redis = "t3.micro"
+    mysql = "t3.micro"
+    rabbitmq = "t3.micro"
+  }
 }
