@@ -16,4 +16,4 @@ resource "aws_route53_record" "www" {
 }
 
 # line 12 : dot . is static that is not variable -->interpolation, we need mongodb.kalyanu.xyz right
-# So im getting the names from the ec2 instances tags right from there we are getting
+# So im getting the names from the ec2 instances tags right from there we are taking
