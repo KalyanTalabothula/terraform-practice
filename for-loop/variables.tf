@@ -76,7 +76,7 @@ variable "domain_name" {
 # for-loop
 
 variable "instances" {
-  type = list(string)
+  type = map (string)
   default = {
     mongodb = "t3.micro"  # each keyword is assigned for every iteration. you will get each.key and each.value
     redis = "t3.micro"
