@@ -12,7 +12,7 @@ resource "aws_route53_record" "www" {
   name    = "${var.instances[count.index]}.${var.kalyanu.xyz}" 
   type    = "A"
   ttl     =  1 
-  records = [aws_eip.lb.public_ip]
+  records = [aws_instance.roboshop[count.index].public_ip]
 }
 
 # line 12 : dot . is static that is not variable -->interpolation, we need mongodb.kalyanu.xyz right
