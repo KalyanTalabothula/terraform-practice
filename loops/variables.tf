@@ -59,3 +59,15 @@ variable "instances" {
   type = list(string)
   default = [  "mongodb", "redis", "mysql", "rabbitmq"  ]
 }
+
+
+
+
+variable "zone_id" {
+  type = string
+  default = "Z00927541W472WAHJVTNL"
+}
+
+variable "domain_name" {
+  default = "kalyanu.xyz"
+}
