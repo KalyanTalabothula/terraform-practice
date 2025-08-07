@@ -55,7 +55,7 @@ variable "environment" {
     default = "prod"
 }
 
-variable "instance" {
+variable "instances" {
   type = list(string)
   default = [  "mongodb", "redis", "mysql", "rabbitmq"  ]
 }
