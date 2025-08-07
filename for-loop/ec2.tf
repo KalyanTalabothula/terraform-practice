@@ -6,6 +6,7 @@ resource "aws_instance" "roboshop" {
   for_each = toset(var.instances) # it will list to map
   ami           = var.ami_id  
   instance_type = "t3.micro"
+  #instance_type = each.value
   vpc_security_group_ids = [  aws_security_group.allow_all.id  ]
   
   tags = {                                 # tags expected map vaules
