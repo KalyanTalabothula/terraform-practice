@@ -1,14 +1,14 @@
 
-# Left side are the syntax we don't change = Right side we can change whatever we want 
-# Key (left side) = Vaule (Right side)
 
 resource "aws_instance" "roboshop" {
-  count = 4     # create four similar EC2 instances
+  count = 4        # create four similar EC2 instances
   ami           = var.ami_id  
   instance_type = var.environment == "dev" ? "t3.micro" : "t3.small"
   vpc_security_group_ids = [  aws_security_group.allow_all.id  ]
   
-  tags = var.ec2_tags    # tags expected map vaules
+  tags = {                                 # tags expected map vaules
+    Name = var.instance[count.index]
+  }  
 }
 
 
