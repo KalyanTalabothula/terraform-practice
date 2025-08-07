@@ -1,0 +1,39 @@
+
+# Left side are the syntax we don't change = Right side we can change whatever we want 
+# Key (left side) = Vaule (Right side)
+
+resource "aws_instance" "roboshop" {
+  count = 4     # create four similar EC2 instances
+  ami           = var.ami_id  
+  instance_type = var.environment == "dev" ? "t3.micro" : "t3.small"
+  vpc_security_group_ids = [  aws_security_group.allow_all.id  ]
+  
+  tags = var.ec2_tags    # tags expected map vaules
+}
+
+
+resource "aws_security_group" "allow_all" {
+  name        = var.sg_name
+  description = var.sg_description
+
+  ingress {
+    from_port        = var.from_port
+    to_port          = var.to_port
+    protocol         = "-1"     
+    cidr_blocks      = var.cidr_blocks
+    ipv6_cidr_blocks = ["::/0"]
+  }
+
+   egress {
+    from_port        = 0 
+    to_port          = 0
+    protocol         = "-1"     
+    cidr_blocks      = ["0.0.0.0/0"]
+    ipv6_cidr_blocks = ["::/0"]
+  }
+
+  tags = var.sg_tags     # tags expected map vaules
+}
+
+
+
