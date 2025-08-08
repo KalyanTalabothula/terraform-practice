@@ -4,8 +4,12 @@
 
 # For that we have syntax of output like variable syntax only. like piping 
 
+# output blockage is used to print the output of resource in the terminal
+
 output "final_name" {
     value  = local.final_name
 }
 
-# output blockage is used to print the output of resource in the terminal
+output "ec2_tags" {
+    value = local.ec2_tags
+}

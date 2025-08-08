@@ -20,3 +20,10 @@ variable "component" {
  */
 
 # oka Variable vere variables refer cheyaledu. 
+
+variable "common_tags" {
+  default = {
+    Project   = "roboshop"
+    Terraform = "true"
+  }
+}
