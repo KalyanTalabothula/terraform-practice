@@ -5,7 +5,7 @@
 # For that we have syntax of output like variable syntax only. like piping 
 
 output "final_name" {
-    value  = local.final_name
+    value  = locals.final_name
 }
 
 # output blockage is used to print the output of resource in the terminal
