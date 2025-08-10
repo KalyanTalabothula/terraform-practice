@@ -13,6 +13,7 @@ resource "aws_route53_record" "www" {
   type    = "A"
   ttl     =  1 
   records = [aws_instance.roboshop[count.index].public_ip]
+  allow_overwrite = true 
 }
 
 # line 12 : dot . is static that is not variable -->interpolation, we need mongodb.kalyanu.xyz right
