@@ -16,6 +16,26 @@ resource "aws_instance" "roboshop" {
     when = destroy  
   }
 
+  connection {
+    type     = "ssh"
+    user     = "ec2-user"     # <-- name of user
+    password = "DevOps321"
+    host     = self.public_ip    # < -- public only right, mana laptop numchi ite.. 
+  }
+
+  provisioner "remote-exec" {
+    inline = [
+      "sudo dnf install nginx -y",
+      "sudo systemctl start nginx",
+    ]
+  }
+  
+  provisioner "remote-exec" {
+    inline = [
+      "sudo dnf install nginx -y",
+      "sudo systemctl stop nginx",
+    ]
+  }
 }
 
 resource "aws_security_group" "allow_all" {
