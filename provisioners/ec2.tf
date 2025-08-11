@@ -1,6 +1,4 @@
 
-#  self mean roboshop only, >private_ip means dani private-ip only, dhanini tisukoni velli inventory ane file create chesi dhanilo save chey ani meaning. 
-
 resource "aws_instance" "roboshop" {
   ami           = var.ami_id  
   instance_type = var.instance_type
@@ -9,7 +7,7 @@ resource "aws_instance" "roboshop" {
   tags = var.ec2_tags    
 
     provisioner "local-exec" {
-    command = " echo ${self.private_ip} > inventory"    
+    command = " ${self.private_ip} > inventory"    
   }
 
 }
@@ -37,5 +35,16 @@ resource "aws_security_group" "allow_all" {
   tags = var.sg_tags     # tags expected map vaules
 }
 
+
+#  self mean roboshop only, >private_ip means dani private-ip only, dhanini tisukoni velli inventory ane file create chesi dhanilo save chey ani meaning. 
+
+# so IP-address vachhimdhi, ee ip address tho yemi chesukuntam, you can run ansible play books automatic gha. so terraform ni ansible ni integrate chesukoni..
+# Terraform responsible vachhesi server ni create cheyatam varaske, an then once server create chesina taruwata miku ip address vachhimdhi ante,then you can handover this ip-address to Ansible. Appudu ansible aa server ki connect ayye a provisioning chestumdhi. public or private Ip whatever we want, we can give. 
+
+# not only Ip address, manaki nachhina di run chesukovachhu. like Alarts pampimchatamu or yevariki ina info cheyatamu ala... 
+
+# yenni local-exec aaina e vachhu, oka dhani taruwata okati execute avutumdhi.  
+
+# ala ney failure behaviour kuda pettukovachhu, indhak amanam yemi chesamu, adi fail indhi kabatti malli adi first numdhi execute indhi... naku ala vaddu fail ite parledu anukunte on failure = continue ani pedate ipotumdhi. appudu malli recreate avvaadu
 
 
