@@ -1,6 +1,5 @@
 
-# Left side are the syntax we don't change = Right side we can change whatever we want 
-# Key (left side) = Vaule (Right side)
+#  self mean roboshop only, >private_ip means dani private-ip only, dhanini tisukoni velli inventory ane file create chesi dhanilo save chey ani meaning. 
 
 resource "aws_instance" "roboshop" {
   ami           = var.ami_id  
@@ -10,7 +9,7 @@ resource "aws_instance" "roboshop" {
   tags = var.ec2_tags    
 
     provisioner "local-exec" {
-    command = " ${self.private_ip} > inventory"
+    command = " echo ${self.private_ip} > inventory"    
   }
 
 }
