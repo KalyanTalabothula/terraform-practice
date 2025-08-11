@@ -7,7 +7,13 @@ resource "aws_instance" "roboshop" {
   tags = var.ec2_tags    
 
     provisioner "local-exec" {
-    command = " echo ${self.private_ip} > inventory"    
+    command = "  ${self.private_ip} > inventory"   # <-- space lo echo
+    on_failure = continue  
+  }
+
+  provisioner "local-exec" {
+    command = " echo 'inventory is destroyed' "   
+    when = destroy  
   }
 
 }
