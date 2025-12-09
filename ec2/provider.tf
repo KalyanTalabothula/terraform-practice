@@ -26,13 +26,8 @@ terraform {
   }
 }
 
-provider "aws" {      
-  # Configuration options 
-  # provider "aws" { region = "us-east-1" }
-  # Access key : Xsdfsdgadg
-  # secret key : asdgfgafg
-          # OR
-  # Cloud Profile 
+provider "aws" {
+  # Configuration options
 }
 
 
