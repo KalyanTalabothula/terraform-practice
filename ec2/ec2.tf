@@ -31,7 +31,7 @@ resource "aws_security_group" "allow_all" {
   ingress {
     from_port        = 0 # if you need specific port like 80 ala kuda echhukovachhu, al echhi Protocal anedi TCP ani mention cheyali
     to_port          = 0
-    protocol         = "-1"     # if you selsect -1 that means allow all inbond 
+    protocol         = "-1"     # if you select -1 that means allow all inbond 
     cidr_blocks      = ["0.0.0.0/0"]
     ipv6_cidr_blocks = ["::/0"]
   }
@@ -39,7 +39,7 @@ resource "aws_security_group" "allow_all" {
    egress {
     from_port        = 0 
     to_port          = 0
-    protocol         = "-1"     # if you selsect -1 that means allow all inbond 
+    protocol         = "-1"     # if you select -1 that means allow all inbond 
     cidr_blocks      = ["0.0.0.0/0"]
     ipv6_cidr_blocks = ["::/0"]
   }
