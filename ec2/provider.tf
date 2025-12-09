@@ -13,7 +13,7 @@
 # ante intialize chestunnam, so adi aws ki sambamchina provider ni install chestumdhi ani. 
 # Succesfully instalized, Meee provider configuration check chesukoni, Internet lopaki velli e provider.exe anedhi techhukumtumdhi. that's it.
 
-# Windows laptop --> Install terraform --> downloaded .exe --> environment variables lo path mention chestam --> aws credentials Bash lo mention chestam. 
+# Windows laptop --> Install terraform --> downloaded .exe --> environment variables lo path mention chestam --> aws credentials Bash lo mention chestam.
 
 # and .terraform.lock.hcl lo mee versions ni mention chestumdhi. 
 
@@ -27,7 +27,12 @@ terraform {
 }
 
 provider "aws" {      
-  # Configuration options  
+  # Configuration options 
+  # provider "aws" { region = "us-east-1" }
+  # Access key : Xsdfsdgadg
+  # secret key : asdgfgafg
+          # OR
+  # Cloud Profile 
 }
 
 
