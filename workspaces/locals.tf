@@ -1,7 +1,4 @@
-locals {
-    sg_id = [  aws_security_group.allow_all.id  ]
-}
 
 locals { 
-    sg_id = [ aws_security_group/allow_all.id ]
+    sg_id = [ aws_security_group.allow_all.id ]
 }
