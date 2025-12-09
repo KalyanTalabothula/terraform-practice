@@ -13,13 +13,15 @@
 # ante intialize chestunnam, so adi aws ki sambamchina provider ni install chestumdhi ani. 
 # Succesfully instalized, Meee provider configuration check chesukoni, Internet lopaki velli e provider.exe anedhi techhukumtumdhi. that's it.
 
+# Windows laptop --> Install terraform --> downloaded .exe --> environment variables lo path mention chestam --> aws credentials Bash lo mention chestam. 
+
 # and .terraform.lock.hcl lo mee versions ni mention chestumdhi. 
 
 terraform {
   required_providers {
     aws = {
       source = "hashicorp/aws"
-      version = "5.98.0"
+      version = "5.98.0"    # AWS Plugin version
     }
   }
 }
