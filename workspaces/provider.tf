@@ -16,3 +16,5 @@ provider "aws" {
           # OR
   # Cloud Profile 
 }
+
+# if we mentioned here our AWS credentials, then we run our github account sends continuous emails because our credentials are leaked, it is available in Github account, anyone can see our aws credentials, that's the reason we are not mentioning here and giving before in gitBash by using aws configure command. 
