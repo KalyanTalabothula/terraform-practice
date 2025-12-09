@@ -1,6 +1,6 @@
 resource "aws_instance" "example" {
-  ami           = "ami-09c813fb71547fc4f"
-  instance_type = "t3.micro"
+  ami           = var.ami_id
+  instance_type = var.instance_type
 
   tags = {
     Name = "HelloWorld"
