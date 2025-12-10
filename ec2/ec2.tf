@@ -19,7 +19,7 @@ resource "aws_instance" "roboshop" {
   # these are enough to create ec2 instance. 
   
   tags = {
-    Name = "HelloWorld"
+    Name = "HelloWorld"  # Instance name Helloworld AWS Console chupistumdhi 
   }
 }
 
